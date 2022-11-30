@@ -1,1 +1,3 @@
-Dodałem osobną tabele movies_has_categories by baza danych posiadała postać 2NF
+Baza od początku spełnia postać 1NF i 3NF, posiada oddzielną tabelkę dla categories oraz każda tabelka posiada klucz podstawowy.
+Częściowo spełniała postać 2NF przez posiadanie relacji.
+Dodałem osobną tabele movies_has_categories by baza danych posiadała postać 2NF.
