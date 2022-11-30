@@ -1,0 +1,1 @@
+Dodałem osobną tabele movies_has_categories by baza danych posiadała postać 2NF
