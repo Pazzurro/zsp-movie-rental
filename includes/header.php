@@ -1,5 +1,6 @@
 <?php
     $db = new mysqli("127.0.0.1", "root", "", "zsp_movie");
+    session_start();
 ?>
 
 <html>
@@ -8,8 +9,8 @@
     </head>
     <body>
         <header class="header">
-            <span style="font-size: 60">ZSP-Movies </span>
-            <span style="font-size: 20"><a href="../index.php"> Najlepsza wypożyczalnia filmów</a></span>
+            <span style="font-size: 60"><a href="../index.php">ZSP-Movies </a></span>
+            <span style="font-size: 20"> Najlepsza wypożyczalnia filmów</span>
         </header>
     </body>
 </html>

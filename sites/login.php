@@ -18,31 +18,37 @@
                     <label>Login: <input type="text" name="login"></label><br>
                     <label>Hasło: <input type="text" name="password"></label><br><br>
                     <button type="submit">Zaloguj</button>
+                    
+                    <a href="register.php">Create account</a>
                 </form>
                 
-                <a href="register.php">Create account</a>
+                
                 
                 <div>
                     <?php
                         //sprawdzenie poprawności danych logowania
                         if(isset($_POST["login"]) && isset($_POST["password"]))
                         {
-                            $sql = 'SELECT login, password FROM accounts WHERE (login = "'.$_POST["login"].'" AND password = "'.$_POST["password"].'") AND is_admin = 0;';
+                            $sql = 'SELECT id, login, password FROM accounts WHERE (login = "'.$_POST["login"].'" AND password = "'.$_POST["password"].'");';
 
 
-                            if(mysqli_num_rows($db->query($sql)))
+                            if($res = $db->query($sql))
                             {
-                                //zalogowano
-                                header("location: ../index.php");
-                            }
-                            else
-                            {
-                                //błędne dane
-                                echo '<h1 style="color: red">PODANO ZŁE DANE</h1>';
+                                if($row = $res->fetch_array())
+                                {
+                                    //zalogowano
+                                    $_SESSION["whoLogged"] = $row["id"];
+                                    $_SESSION["isAdmin"] = false;
 
-                            }
+                                    header("location: ../index.php");
+                                }
+                                else
+                                {
+                                    //błędne dane
+                                    echo '<h1 style="color: red">PODANO ZŁE DANE</h1>';
+                                }   
+                            } 
                         }
-
                     ?>
                 </div>
             </div>
