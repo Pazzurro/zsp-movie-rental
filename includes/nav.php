@@ -5,22 +5,48 @@
     <body>
         <header class="nav">
             <table cellspacing="0" rowspacing="0">
-                <tr>
-                    <td><button class="navButton"><span style="font-size: 15px">Wyszukiwarka filmów</span></button></td>
+                <tr>   
+                    
+                    <form action="/movies/sites/movie-search.php" method="post">
+                        <td>
+                            <button class="navButton"><span>Szukaj</span></button>
+                        </td>
+                    </form>
+                    
                     
                     <?php
+                        $logoutURL = '/movies/sites/logout.php';   $loginURL = '/movies/sites/login.php';
+                        $myMovieURL = '/movies/sites/movie-my.php';
+                        $addMovieURL = '/movies/sites/movie-add.php';
+                    
                         if(isset($_SESSION["whoLogged"]))
                         {
                             echo'
-                                <td><button class="navButton"><span style="font-size: 15px">Moje filmy</span></button></td>
+                                <form action="'.$myMovieURL.'" method="post">
+                                    <td>
+                                        <button class="navButton"><span>Moje filmy</span></button>
+                                    </td>
+                                </form>
                                 
-                                <td><button class="navButton"><span style="font-size: 15px">Wyloguj</span></button></td>
+                                <form action="'.$addMovieURL.'" method="post">
+                                    <td>
+                                        <button class="navButton"><span>Dodaj film</span></button>
+                                    </td>
+                                </form>
+                                
+                                <form action="'.$logoutURL.'" method="post">
+                                    <td>
+                                        <button class="navButton"><span>Wyloguj</span></button>
+                                    </td>
+                                </form>
                             ';
                         }
                         else
                         {
                             echo'
-                                <td><button class="navButton"><span style="font-size: 15px">Zaloguj</span></button></td>
+                                <form action="'.$loginURL.'" method="post">
+                                    <td><button class="navButton"><span>Zaloguj</span></button></td>
+                                </form>
                             ';
                         }
                     ?>
