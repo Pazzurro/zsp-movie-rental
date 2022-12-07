@@ -7,23 +7,27 @@
     </head>
     <body>
         <header>
-            <?php include 'includes/header.php'; ?>
+            <?php include '../includes/header.php'; ?>
             
         </header>
         
         
         <nav>
-            <?php include 'includes/nav.php'; ?>
+            <?php include '../includes/nav.php'; ?>
         </nav>
         
         
         <section>
-            
+            <div class="main">
+                <div class="searchBlock">
+                    asdsadsad
+                </div>
+            </div>
         </section>
         
         
         <footer>
-            <?php include 'includes/footer.php'; ?>
+            <?php include '../includes/footer.php'; ?>
         </footer>
     </body>
 </html>

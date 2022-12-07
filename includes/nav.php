@@ -7,7 +7,7 @@
             <table cellspacing="0" rowspacing="0">
                 <tr>   
                     
-                    <form action="/movies/sites/movie-search.php" method="post">
+                    <form action="/zsp-movie-rental/sites/movie-search.php" method="post">
                         <td>
                             <button class="navButton"><span>Szukaj</span></button>
                         </td>
@@ -15,9 +15,9 @@
                     
                     
                     <?php
-                        $logoutURL = '/movies/sites/logout.php';   $loginURL = '/movies/sites/login.php';
-                        $myMovieURL = '/movies/sites/movie-my.php';
-                        $addMovieURL = '/movies/sites/movie-add.php';
+                        $logoutURL = '/zsp-movie-rental/sites/logout.php';   $loginURL = '/zsp-movie-rental/sites/login.php';
+                        $myMovieURL = '/zsp-movie-rental/sites/movie-my.php';
+                        $addMovieURL = '/zsp-movie-rental/sites/movie-add.php';
                     
                         if(isset($_SESSION["whoLogged"]))
                         {

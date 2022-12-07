@@ -9,7 +9,7 @@
     </head>
     <body>
         <header class="header">
-            <span style="font-size: 60"><a href="/movies/index.php">ZSP-Movies </a></span>
+            <span style="font-size: 60"><a href="/zsp-movie-rental/index.php">ZSP-Movies </a></span>
             <span style="font-size: 20"> Najlepsza wypożyczalnia filmów</span>
         </header>
     </body>
