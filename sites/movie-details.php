@@ -43,6 +43,7 @@
                             
                             echo'        
                                     <form action="movie-add.php" method="post">
+                                        <input type="hidden" value="'.$_GET["filmID"].'" name="filmID">
                                         <button class="detailButton" type="submit">Wypożycz film</button>
                                     </form>
                                 <div>

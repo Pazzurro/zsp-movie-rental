@@ -23,20 +23,46 @@
                 {
                     header("location: ../sites/login.php");
                 }
-            
-                
             ?>
+            
             
             <div class="detailsBox">
                 <div class="detailContent">
-                    <form action="../movie-my.php">
+                    <form method="post">
+                        <input type="hidden" name="confirm">
                         <h3>Wypożyczanie filmu</h3>
 
                         <?php echo 'Dzisiejsza data: '.date('Y-m-d'); ?>
                         <br><br>
-                        <label>Na ile dni wypożyczyć? <br><input type="number" max="14" min="0" onchange="calcDate"> max: 14 dni</label>
+                        <label>Na ile dni wypożyczyć? <br><input type="number" max="14" min="1" name="days"> max: 14 dni</label><br>
                         
-                        <p id="fixedTime"></p>
+                        <?php
+                            echo '<input type="hidden" value="'.$_POST["filmID"].'" name="filmID">';
+                            
+                            if(isset($_POST["confirm"]))
+                            {
+                                if($_POST["days"] == NULL)
+                                {
+                                   echo '<h1>Podaj date!</h1>';   
+                                }
+                                else
+                                {
+                                    $days = '+ '.$_POST["days"].' days';
+                                    $date = date('Y-m-d');
+                                    $endDate = date('Y-m-d', strtotime($date .''. $days));
+                                    $accID = $_SESSION["whoLogged"];
+                                    $filmID = $_POST["filmID"];
+                                    
+                                    $sql = "INSERT INTO rents (date_start, date_end, accounts_id, movies_id) VALUES ('$date','$endDate', $accID, $filmID);";
+                                    
+                                    $db->query($sql);
+                                    
+                                    header("location: ../sites/movie-search.php");
+                                }
+                            }
+                        ?>
+                        
+                        <button class="detailButton" type="submit">Potwierdź</button>
                     </form>
                 </div>
             </div>
@@ -46,13 +72,5 @@
         <footer>
             <?php include '../includes/footer.php'; ?>
         </footer>
-        
-        <script>
-            function calcDate(days)
-            {
-                var p = document.getElementById("fixedTime");
-                
-            }
-        </script>
     </body>
 </html>

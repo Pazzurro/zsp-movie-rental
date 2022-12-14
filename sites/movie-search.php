@@ -20,7 +20,7 @@
         <section>
             <div class="main">
                 <?php
-                    $sql = 'SELECT movies.id, movies.title, movies.lenght, movies.year FROM movies JOIN rents ON movies.id != rents.movies_id;';
+                    $sql = 'SELECT movies.id AS mID, movies.title, movies.lenght, movies.year, rents.id FROM movies LEFT JOIN rents ON movies.id = rents.movies_id WHERE rents.id IS NULL;';
                 
                     if($res = $db->query($sql))
                     {
@@ -29,7 +29,7 @@
                             echo'
                                 <form action="movie-details.php" method="get">
                                     
-                                    <input type="hidden" name="filmID" value="'.$row["id"].'">
+                                    <input type="hidden" name="filmID" value="'.$row["mID"].'">
                                     <button type="submit" class="searchButton">
                                         <div class="searchContent">
                                             <h2>'.$row["title"].'</h4>
