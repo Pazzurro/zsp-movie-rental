@@ -9,7 +9,7 @@
                     
                     <form action="/zsp-movie-rental/sites/movie-search.php" method="post">
                         <td>
-                            <button class="navButton"><span>Szukaj</span></button>
+                            <button class="navButton"><span>Szukaj filmu</span></button>
                         </td>
                     </form>
                     
@@ -25,12 +25,6 @@
                                 <form action="'.$myMovieURL.'" method="post">
                                     <td>
                                         <button class="navButton"><span>Moje filmy</span></button>
-                                    </td>
-                                </form>
-                                
-                                <form action="'.$addMovieURL.'" method="post">
-                                    <td>
-                                        <button class="navButton"><span>Dodaj film</span></button>
                                     </td>
                                 </form>
                                 

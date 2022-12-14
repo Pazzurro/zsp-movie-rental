@@ -17,7 +17,25 @@
         
         
         <section>
+            <div class="indexMain">
+                <div class="indexBlock">
+                    <h4>Historia wypożyczalni</h4>
+                    <p>Tekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekst</p>
+                </div>
+                <div class="indexBlock">
+                    <img src="images/clock.png">
+                </div>
+            </div>
             
+            <div class="indexMain">
+                <div class="indexBlock">
+                     <img src="images/camera.png">
+                </div>
+                <div class="indexBlock">
+                    <h4>Wysoka jakość usług</h4>
+                    <p>Tekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekstTekst tekst tekst tekst</p>
+                </div>
+            </div>
         </section>
         
         

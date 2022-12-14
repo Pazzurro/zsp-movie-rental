@@ -102,18 +102,62 @@ body
 
 .indexBlock > img
 {
-    width: 90%;
-    height: 90%;
+    width: 70%;
+    max-height: 300px;
     margin: auto;
 }
 
-.searchBlock
+.searchButton
 {
     width: 80%;
-    height: 70px;
+    height: 120px;
     font-size: 17px;
     border: 1px solid black;
     border-radius: 30px;
     margin: 30px 10%; 
     box-shadow: 2px 2px 7px black;
+    text-align: left;
+    background-color: white;
+    min-width: 450px;
+}
+
+.searchButton:hover
+{
+    background-color: rgb(224, 224, 224);
+}
+
+.searchContent
+{
+    margin-left: 30px;
+}
+
+.detailsBox
+{
+    margin: auto;
+    margin-top: 70px;
+    width: 70%;
+    height: 500px;
+    border: 3px solid rebeccapurple;
+}
+
+.detailContent
+{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.detailButton
+{
+    color: white;
+    width: 150px;;
+    text-align: center;
+    height: 30px;
+    background-color: #442265;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.detailButton:hover
+{
+    background-color: #5d2e8b;
 }

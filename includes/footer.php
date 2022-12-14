@@ -1,3 +1,7 @@
+<?php
+    $db->close();
+?>
+
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="../css/style.css" >

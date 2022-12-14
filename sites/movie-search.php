@@ -19,9 +19,38 @@
         
         <section>
             <div class="main">
-                <div class="searchBlock">
-                    asdsadsad
-                </div>
+                <?php
+                    $sql = 'SELECT movies.id, movies.title, movies.lenght, movies.year FROM movies JOIN rents ON movies.id != rents.movies_id;';
+                
+                    if($res = $db->query($sql))
+                    {
+                        while($row = $res->fetch_array())
+                        {
+                            echo'
+                                <form action="movie-details.php" method="get">
+                                    
+                                    <input type="hidden" name="filmID" value="'.$row["id"].'">
+                                    <button type="submit" class="searchButton">
+                                        <div class="searchContent">
+                                            <h2>'.$row["title"].'</h4>
+
+                                            <table class="searchTable">
+                                                <tr>
+                                                    <td style="width: 100px">
+                                                        <p>rok produkcji: '.$row["year"].' </p>
+                                                    </td>
+                                                    <td style="width: 100px">
+                                                        <p>długość filmu: '.$row["lenght"].' minut </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </button>
+                                </form>
+                            ';
+                        }
+                    }
+                ?>
             </div>
         </section>
         
