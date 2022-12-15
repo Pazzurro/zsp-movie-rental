@@ -14,12 +14,10 @@
         <section>
             <div class="loginBox">
                 <form method="post">
-                    <h2>Logowanie</h2>
+                    <h2>Logowanie jako Admin</h2>
                     <label>Login: <input type="text" name="login"></label><br>
                     <label>Hasło: <input type="password" name="password"></label><br><br>
                     <button type="submit">Zaloguj</button>
-                    
-                    <a href="register.php">Create account</a>
                 </form>
                 
                 
@@ -29,7 +27,7 @@
                         //sprawdzenie poprawności danych logowania
                         if(isset($_POST["login"]) && isset($_POST["password"]))
                         {
-                            $sql = 'SELECT id, login, password FROM accounts WHERE (login = "'.$_POST["login"].'" AND password = "'.$_POST["password"].'");';
+                            $sql = 'SELECT id, login, password FROM accounts WHERE login = "'.$_POST["login"].'" AND password = "'.$_POST["password"].'" AND is_admin = 1;';
 
 
                             if($res = $db->query($sql))
@@ -38,6 +36,7 @@
                                 {
                                     //zalogowano
                                     $_SESSION["whoLogged"] = $row["id"];
+                                    $_SESSION["isAdmin"] = true;
 
                                     header("location: ../index.php");
                                 }

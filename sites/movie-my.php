@@ -53,7 +53,7 @@
                 <div class="myMoviesSide">
                     <?php
                        //Oczekujące wypożyczenia 
-                        $sql = 'SELECT movies.id AS mID, movies.title, rents.date_end, rents.id AS rID FROM movies JOIN rents ON rents.movies_id = movies.id WHERE rents.accounts_id = 3 AND movies.admin_id = 0;';
+                        $sql = 'SELECT movies.id AS mID, movies.title, rents.date_end, rents.id AS rID FROM movies JOIN rents ON rents.movies_id = movies.id WHERE rents.accounts_id = '.$_SESSION["whoLogged"].' AND movies.admin_id = 0;';
                     
                         if($res = $db->query($sql))
                         {
@@ -80,7 +80,7 @@
                 <div class="myMoviesSide">
                     <?php
                        //Potwierdzone wypożyczenia 
-                        $sql = 'SELECT movies.id AS mID, movies.title, rents.date_end, rents.id AS rID FROM movies JOIN rents ON rents.movies_id = movies.id WHERE rents.accounts_id = 3 AND movies.admin_id != 0;';
+                        $sql = 'SELECT movies.id AS mID, movies.title, rents.date_end, rents.id AS rID FROM movies JOIN rents ON rents.movies_id = movies.id WHERE rents.accounts_id = '.$_SESSION["whoLogged"].' AND movies.admin_id != 0;';
                     
                         if($res = $db->query($sql))
                         {

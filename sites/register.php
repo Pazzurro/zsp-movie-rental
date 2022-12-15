@@ -16,7 +16,7 @@
                 <form method="post">
                     <h2>Stwórz konto</h2>
                     <label>Login: <input type="text" name="login"></label><br>
-                    <label>Hasło: <input type="text" name="password"></label><br>
+                    <label>Hasło: <input type="password" name="password"></label><br>
                     <label>Imie:  <input type="text" name="name"></label><br>
                     <label>Nazwisko: <input type="text" name="lastname"></label><br><br>
                     <button type="submit">Stwórz konto</button>
