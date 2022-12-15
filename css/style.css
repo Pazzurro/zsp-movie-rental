@@ -162,3 +162,32 @@ body
 {
     background-color: #5d2e8b;
 }
+
+.myMovies
+{
+    margin: auto;
+    margin-top: 50px;
+    width: 80%;
+}
+
+.myMoviesLine
+{
+    border: 3px solid rebeccapurple;
+    width: 90%;
+}
+
+.myMoviesSide
+{
+    width: 50%;
+    margin-top: 30px;
+    float: left;
+}
+
+.myMoviesBlock
+{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    border: 1px solid black
+}
